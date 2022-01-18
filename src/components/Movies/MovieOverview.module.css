@@ -4,12 +4,10 @@
 
 .closeBtn {
     border-radius: 0.5rem;
-    position: absolute;
-    left: 0.5rem;
-    top: 0.5rem;
     background-color: transparent;
     border: 1px solid white;
     color: white;
+    margin-left: 1rem;
 }
 
 .img {
@@ -19,9 +17,8 @@
 
 .overview {
     color: white;
-    margin-left: auto;
-    margin-right: auto;
     padding: 0.5rem 1rem;
+    margin: 0 auto;
 }
 
 .title {

@@ -10,14 +10,14 @@ const MovieOverview = (props) => {
     <Modal>
       <div className={classes.main}>
         <img src={ctx.movie.backdrop} className={classes.img}></img>
-        <button className={classes.closeBtn} onClick={props.onClick}>
-          Close
-        </button>
         <h2 className={classes.title}>{ctx.movie.title}</h2>
         <div className={classes.details}>
           <h5 className={classes.border}>{ctx.movie.vote}</h5>
           <h5 className={classes.border}>{date}</h5>
         </div>
+        <button className={classes.closeBtn} onClick={props.onClick}>
+          Close
+        </button>
         <h5 className={classes.overview}>{ctx.movie.overview}</h5>
       </div>
     </Modal>
