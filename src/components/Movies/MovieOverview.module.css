@@ -1,0 +1,47 @@
+.main {
+    position:relative;
+}
+
+.closeBtn {
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.overview {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 1rem;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    right: 0.5rem;
+    width: fit-content;
+    color: white;
+}
+
+.details {
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    color: white;
+}
+
+.border {
+    border: 2px solid rgb(2, 2, 2) ;
+
+}

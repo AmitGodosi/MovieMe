@@ -1,0 +1,21 @@
+.movies {
+    max-width: 90%;
+    border-radius: 2rem;
+    display: flex;
+    margin-left: 1rem;
+    padding: 0;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    margin-top: 0;
+}
+
+.movies::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.label {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    color: white;
+}

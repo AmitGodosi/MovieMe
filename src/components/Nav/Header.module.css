@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 2rem; 
+    margin-left: 1rem;
+}
+
+.titleStart {
+    color: rgb(141, 49, 49);
+    margin: 0;
+}
+
+.titleEnd {
+    color: rgb(141, 21, 21);
+    margin: 0;
+    transform: rotateZ(10deg);
+    margin-left: 0.5rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(31, 28, 28);
+}
+
+
+.actions {
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+}
+
+.actions button {
+    margin: 0 0.2rem;
+    color: rgb(141, 21, 21);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        font-size: 1.5rem; 
+    }
+
+    .actions {
+        margin-top: 1rem;
+    }
+}
