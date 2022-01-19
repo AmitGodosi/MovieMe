@@ -64,6 +64,7 @@ const GetMovie = (props) => {
   };
   const closeMovieHandler = () => {
     setMovieState(false);
+    setVideosState([]);
   };
 
   return (

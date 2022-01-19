@@ -13,6 +13,9 @@ const MovieOverview = (props) => {
   const trilerHandler = () => {
     setTrailerState(true);
   };
+  const hideTrilerHandler = () => {
+    setTrailerState(false);
+  };
   return (
     <Modal>
       <div className={classes.main}>
