@@ -7,8 +7,11 @@ import PlayCircleOutline from "@material-ui/icons/PlayCircleOutline";
 const MovieOverview = (props) => {
   const [trailerState, setTrailerState] = useState(false);
   const ctx = useContext(movieContext);
-  const date = ctx.movie.releaseDate.split("-")[0];
-  const trailer = "https://www.youtube.com/embed/".concat(ctx.videos.key);
+  let date = ctx.movie.releaseDate.split("-")[0];
+  let trailer = "https://www.youtube.com";
+  if (!props.last) {
+    trailer = "https://www.youtube.com/embed/".concat(ctx.videos.key);
+  }
 
   const trilerHandler = () => {
     setTrailerState(true);
@@ -40,7 +43,7 @@ const MovieOverview = (props) => {
           <div className={classes.details}>
             <h5 className={classes.border}>{ctx.movie.vote}</h5>
             <h5 className={classes.border}>{date}</h5>
-            {ctx.videos.key && (
+            {ctx.videos?.key && (
               <PlayCircleOutline
                 className={classes.icon}
                 onClick={trilerHandler}

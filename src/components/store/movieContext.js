@@ -7,6 +7,7 @@ const movieContext = React.createContext({
   popularTV: true,
   ratedMovies: true,
   ratedTV: true,
+  upcomingMovies: true,
 });
 
 export default movieContext;

@@ -8,17 +8,20 @@ function App() {
   const [popularMoviesState, setPopularMovies] = useState(true);
   const [ratedTVState, setRatedTV] = useState(true);
   const [popularTVState, setPopularTV] = useState(true);
+  const [upcomingMovies, setUpcomingMovies] = useState(true);
 
   const homeHandler = () => {
     setRatedMovies(true);
     setPopularMovies(true);
     setRatedTV(true);
     setPopularTV(true);
+    setUpcomingMovies(true);
   };
 
   const movieHandler = () => {
     setRatedMovies(true);
     setPopularMovies(true);
+    setUpcomingMovies(true);
     setRatedTV(false);
     setPopularTV(false);
   };
@@ -27,6 +30,7 @@ function App() {
     setPopularMovies(false);
     setRatedTV(true);
     setPopularTV(true);
+    setUpcomingMovies(false);
   };
   return (
     <MovieContext.Provider
@@ -35,6 +39,7 @@ function App() {
         popularTV: popularTVState,
         ratedMovies: ratedMoviesState,
         ratedTV: ratedTVState,
+        upcomingMovies: upcomingMovies,
       }}
     >
       <Header
