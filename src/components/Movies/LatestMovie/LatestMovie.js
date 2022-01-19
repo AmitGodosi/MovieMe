@@ -37,7 +37,7 @@ const LatestMovie = (props) => {
 
   return (
     <MovieContext.Provider value={{ movie: movieState }}>
-      <h2 className={classes.latest}>Latest Upload</h2>
+      <h2 className={classes.latest}>Latest Uploads</h2>
       <ul className={classes.main}>
         {latestMovie.map((movie) => {
           return (
