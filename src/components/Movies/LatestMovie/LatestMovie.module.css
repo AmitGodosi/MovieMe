@@ -26,6 +26,11 @@
 
 @media screen and (max-width: 768px) {
     .img {
-        
+        width: 100%;
+    }
+
+    .main {
+        gap: 0.5rem;
+        width: 100%;
     }
 }
