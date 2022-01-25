@@ -4,10 +4,21 @@ import LatestMovieOverview from "./LatestMovieOverview";
 import classes from "./LatestMovie.module.css";
 import MovieContext from "../../store/movieContext";
 import MovieOverview from "../MovieOverview";
+import Spider from "../../asset/spider.png";
+import {
+  KeyboardArrowRightOutlined,
+  NavigateBeforeOutlined,
+} from "@material-ui/icons";
+import styled from "styled-components";
+
+const Container = styled.div`
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
+`;
 
 const LatestMovie = (props) => {
   const [movieState, setMovieState] = useState(false);
   const [latestMovie, setLatestMovie] = useState([]);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
     axios.get(props.API).then((res) => {
@@ -35,20 +46,42 @@ const LatestMovie = (props) => {
     setMovieState(false);
   };
 
+  const leftSlideHandler = () => {
+    setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 19);
+  };
+
+  const rightSlideHandler = () => {
+    setSlideIndex(slideIndex < 19 ? slideIndex + 1 : 0);
+  };
+
   return (
     <MovieContext.Provider value={{ movie: movieState }}>
-      <h2 className={classes.latest}>Latest Uploads</h2>
-      <ul className={classes.main}>
+      <Container slideIndex={slideIndex} className={classes.container}>
         {latestMovie.map((movie) => {
           return (
-            <LatestMovieOverview
-              backdrop={movie.backdrop}
-              key={movie.img}
-              onClick={movieHandler.bind(null, movie)}
-            />
+            <div className={classes.movieContainer}>
+              <div className={classes.imgContainer}>
+                <NavigateBeforeOutlined
+                  onClick={leftSlideHandler}
+                  className={classes.left}
+                />
+                <KeyboardArrowRightOutlined
+                  onClick={rightSlideHandler}
+                  className={classes.right}
+                />
+                <img
+                  src={movie.backdrop}
+                  onClick={movieHandler.bind(null, movie)}
+                  className={classes.image}
+                />
+              </div>
+              <h2 className={classes.title}>{movie.title}</h2>
+              <p className={classes.releaseDate}>{movie.releaseDate}</p>{" "}
+              <p className={classes.vote}>{movie.vote}</p>
+            </div>
           );
         })}
-      </ul>
+      </Container>
       {movieState && (
         <MovieOverview onClick={closeMovieHandler} last={"TRUE"} />
       )}

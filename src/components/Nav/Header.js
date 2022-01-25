@@ -10,7 +10,7 @@ const Header = (props) => {
       <div className={classes.actions}>
         <button onClick={props.homeHandler}>Home</button>
         <button onClick={props.movieHandler}>Movies</button>
-        <button onClick={props.tvHandler}>TV</button>
+        <button onClick={props.tvHandler}>Series</button>
       </div>
     </div>
   );
