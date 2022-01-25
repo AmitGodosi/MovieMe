@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    /* overflow-x: scroll; */
+    overflow: unset;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -15,7 +15,7 @@
 
 .imgContainer {
     width: 100vw;
-    height: 70vh;
+    height: 45vh;
 }
 
 .image {
@@ -30,7 +30,7 @@
     right: 0;
     margin: 0 auto;
     width: fit-content;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: white;
     font-family: 'Sedgwick Ave', cursive;
@@ -41,7 +41,7 @@
     position: absolute;
     top: 30px;
     right: 20px;
-    font-size: 15px;
+    font-size: 10px;
     color: white;
     font-family: 'Sedgwick Ave', cursive;
     background-color: rgb(170, 120, 102);
@@ -52,7 +52,7 @@
     position: absolute;
     top: 70px;
     right: 20px;
-    font-size: 15px;
+    font-size: 10px;
     color: white;
     font-family: 'Sedgwick Ave', cursive;
     background-color: rgb(170, 120, 102);

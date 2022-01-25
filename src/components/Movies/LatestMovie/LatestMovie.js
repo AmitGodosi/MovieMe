@@ -1,10 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import LatestMovieOverview from "./LatestMovieOverview";
 import classes from "./LatestMovie.module.css";
 import MovieContext from "../../store/movieContext";
 import MovieOverview from "../MovieOverview";
-import Spider from "../../asset/spider.png";
 import {
   KeyboardArrowRightOutlined,
   NavigateBeforeOutlined,
