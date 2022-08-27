@@ -7,13 +7,13 @@ const POPULAR__MOVIES =
   "https://api.themoviedb.org/3/movie/popular?api_key=40b98d136e6b6d3ae87106bc05050eb1";
 
 const RATED__MOVIES =
-  "http://api.themoviedb.org/3/movie/top_rated?api_key=40b98d136e6b6d3ae87106bc05050eb1";
+  "https://api.themoviedb.org/3/movie/top_rated?api_key=40b98d136e6b6d3ae87106bc05050eb1";
 
 const POPULAR__TV =
-  "http://api.themoviedb.org/3/tv/popular?api_key=40b98d136e6b6d3ae87106bc05050eb1";
+  "https://api.themoviedb.org/3/tv/popular?api_key=40b98d136e6b6d3ae87106bc05050eb1";
 
 const RATED__TV =
-  "http://api.themoviedb.org/3/tv/top_rated?api_key=40b98d136e6b6d3ae87106bc05050eb1";
+  "https://api.themoviedb.org/3/tv/top_rated?api_key=40b98d136e6b6d3ae87106bc05050eb1";
 
 const UPCOMING__MOVIES =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=40b98d136e6b6d3ae87106bc05050eb1&language=en-US&page=1;";

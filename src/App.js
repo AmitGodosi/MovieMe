@@ -44,8 +44,8 @@ function App() {
     >
       <Header
         homeHandler={homeHandler}
-        movieHandler={movieHandler}
         tvHandler={tvHandler}
+        movieHandler={movieHandler}
       />
       <Movies />
     </MovieContext.Provider>

@@ -16,14 +16,15 @@ const MovieOverview = (props) => {
   const trilerHandler = () => {
     setTrailerState(true);
   };
-  const hideTrilerHandler = () => {
-    setTrailerState(false);
-  };
   return (
     <Modal>
       <div className={classes.main}>
         {!trailerState && (
-          <img src={ctx.movie.backdrop} className={classes.img}></img>
+          <img
+            alt="backdrop"
+            src={ctx.movie.backdrop}
+            className={classes.img}
+          ></img>
         )}
         {trailerState && (
           <iframe

@@ -10,7 +10,7 @@ import {
 import styled from "styled-components";
 
 const Container = styled.div`
-  transform: translateX(${(props) => props.slideIndex * -100}vw);
+  overflow-x: hidden;
 `;
 
 const LatestMovie = (props) => {
@@ -55,36 +55,69 @@ const LatestMovie = (props) => {
   return (
     <MovieContext.Provider value={{ movie: movieState }}>
       <Container slideIndex={slideIndex} className={classes.container}>
-        {latestMovie.map((movie) => {
-          return (
-            <div className={classes.movieContainer}>
-              <div className={classes.imgContainer}>
-                <NavigateBeforeOutlined
-                  onClick={leftSlideHandler}
-                  className={classes.left}
-                />
-                <KeyboardArrowRightOutlined
-                  onClick={rightSlideHandler}
-                  className={classes.right}
-                />
-                <img
-                  src={movie.backdrop}
-                  onClick={movieHandler.bind(null, movie)}
-                  className={classes.image}
-                />
-              </div>
-              <h2 className={classes.title}>{movie.title}</h2>
-              <p className={classes.releaseDate}>{movie.releaseDate}</p>{" "}
-              <p className={classes.vote}>{movie.vote}</p>
+        {latestMovie.length > 0 && (
+          <div className={classes.movieContainer}>
+            <div className={classes.imgContainer}>
+              <NavigateBeforeOutlined
+                onClick={leftSlideHandler}
+                className={classes.left}
+              />
+              <KeyboardArrowRightOutlined
+                onClick={rightSlideHandler}
+                className={classes.right}
+              />
+              <img
+                src={latestMovie[slideIndex].backdrop}
+                onClick={movieHandler.bind(null, latestMovie[slideIndex])}
+                className={classes.image}
+              />
             </div>
-          );
-        })}
+            <h2 className={classes.title}>{latestMovie[slideIndex].title}</h2>
+            <p className={classes.releaseDate}>
+              {latestMovie[slideIndex].releaseDate}
+            </p>{" "}
+            <p className={classes.vote}>{latestMovie[slideIndex].vote}</p>
+          </div>
+        )}
       </Container>
       {movieState && (
         <MovieOverview onClick={closeMovieHandler} last={"TRUE"} />
       )}
     </MovieContext.Provider>
   );
+  // return (
+  //   <MovieContext.Provider value={{ movie: movieState }}>
+  //     <Container slideIndex={slideIndex} className={classes.container}>
+  //       {latestMovie.map((movie) => {
+  //         return (
+  //           <div className={classes.movieContainer}>
+  //             <div className={classes.imgContainer}>
+  //               <NavigateBeforeOutlined
+  //                 onClick={leftSlideHandler}
+  //                 className={classes.left}
+  //               />
+  //               <KeyboardArrowRightOutlined
+  //                 onClick={rightSlideHandler}
+  //                 className={classes.right}
+  //               />
+  //               <img
+  //                 src={movie.backdrop}
+  //                 onClick={movieHandler.bind(null, movie)}
+  //                 className={classes.image}
+  //               />
+  //             </div>
+  //             <h2 className={classes.title}>{movie.title}</h2>
+  //             <p className={classes.releaseDate}>{movie.releaseDate}</p>{" "}
+  //             <p className={classes.vote}>{movie.vote}</p>
+  //           </div>
+  //         );
+  //       })}
+  //     </Container>
+  //     {movieState && (
+  //       <MovieOverview onClick={closeMovieHandler} last={"TRUE"} />
+  //     )}
+  //   </MovieContext.Provider>
+  // );
 };
 
 export default LatestMovie;

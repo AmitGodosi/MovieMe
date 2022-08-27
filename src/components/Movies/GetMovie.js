@@ -10,38 +10,41 @@ const GetMovie = (props) => {
   const [movieState, setMovieState] = useState(false);
   const [videosState, setVideosState] = useState([]);
 
-  useEffect(async () => {
-    const TMDBmovies = await axios.get(props.API);
-    const moviesList = TMDBmovies.data.results;
-    let type = "";
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const TMDBmovies = await axios.get(props.API);
+      const moviesList = TMDBmovies.data.results;
+      let type = "";
 
-    if (props.API.slice(28, 30) === "tv") {
-      type = "TV";
-    } else {
-      type = "Movie";
-    }
-
-    const transformMovies = moviesList.map((movie) => {
-      try {
-        return {
-          type: type,
-          img: "https://image.tmdb.org/t/p/w500/".concat(movie.poster_path),
-          backdrop: "https://image.tmdb.org/t/p/w780/".concat(
-            movie.backdrop_path
-          ),
-          overview: movie.overview,
-          releaseDate: movie.release_date
-            ? movie.release_date
-            : movie.first_air_date,
-          title: movie.title ? movie.title : movie.name,
-          vote: movie.vote_average,
-          id: movie.id,
-        };
-      } catch (error) {
-        console.log(error);
+      if (props.API.slice(28, 30) === "tv") {
+        type = "TV";
+      } else {
+        type = "Movie";
       }
-    });
-    setMoviesState(transformMovies);
+
+      const transformMovies = moviesList.forEach((movie) => {
+        try {
+          return {
+            type: type,
+            img: "https://image.tmdb.org/t/p/w500/".concat(movie.poster_path),
+            backdrop: "https://image.tmdb.org/t/p/w780/".concat(
+              movie.backdrop_path
+            ),
+            overview: movie.overview,
+            releaseDate: movie.release_date
+              ? movie.release_date
+              : movie.first_air_date,
+            title: movie.title ? movie.title : movie.name,
+            vote: movie.vote_average,
+            id: movie.id,
+          };
+        } catch (error) {
+          console.log(error);
+        }
+      });
+      setMoviesState(transformMovies);
+    };
+    fetchMovies();
   }, []);
 
   const movieHandler = async (movie) => {
