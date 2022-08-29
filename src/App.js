@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Movies from "./components/Movies/Movies";
-import Header from "./components/Nav/Header";
 import MovieContext from "./components/store/movieContext";
+import Header from "./components/Nav/Header";
 
 function App() {
   const [ratedMoviesState, setRatedMovies] = useState(true);

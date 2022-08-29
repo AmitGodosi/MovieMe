@@ -10,8 +10,8 @@
 .closeBtn {
     border-radius: 0.5rem;
     background-color: transparent;
-    border: 1px solid white;
     color: white;
+    border: 1px solid white;
     margin: 0.5rem 1rem;
     padding: 0.3rem;
     height: min-content;

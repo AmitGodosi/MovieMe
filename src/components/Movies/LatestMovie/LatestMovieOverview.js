@@ -1,5 +1,4 @@
 import classes from "./LatestMovie.module.css";
-
 const LatestMovieOverview = (props) => {
   return (
     <div className={classes.imgContainer}>

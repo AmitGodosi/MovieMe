@@ -10,8 +10,8 @@
 
 .modal {
   position: fixed;
-  left: 5%;
   top: 20vh;
+  left: 5%;
   width: 90%;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 14px;

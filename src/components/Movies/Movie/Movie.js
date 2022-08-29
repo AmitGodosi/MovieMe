@@ -1,5 +1,4 @@
 import classes from "./Movie.module.css";
-
 const Movie = (props) => {
   return (
     <section className={classes.movie} onClick={props.onClick}>

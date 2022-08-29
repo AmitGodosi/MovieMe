@@ -1,8 +1,8 @@
 import React from "react";
 
 const movieContext = React.createContext({
-  movie: {},
   videos: [],
+  movie: {},
   popularMovies: true,
   popularTV: true,
   ratedMovies: true,

@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import classes from "./LatestMovie.module.css";
-import MovieContext from "../../store/movieContext";
 import MovieOverview from "../MovieOverview";
+import MovieContext from "../../store/movieContext";
 import {
   KeyboardArrowRightOutlined,
   NavigateBeforeOutlined,

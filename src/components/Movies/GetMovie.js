@@ -2,8 +2,8 @@ import axios from "axios";
 import Movie from "./Movie/Movie";
 import classes from "./Movies.module.css";
 import { useState, useEffect } from "react";
-import MovieOverview from "./MovieOverview";
 import movieContext from "../store/movieContext";
+import MovieOverview from "./MovieOverview";
 
 const GetMovie = (props) => {
   const [moviesState, setMoviesState] = useState([]);

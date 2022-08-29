@@ -1,8 +1,8 @@
 import classes from "./MovieOverview.module.css";
 import Modal from "../UI/Modal";
 import React, { useState, useContext } from "react";
-import movieContext from "../store/movieContext";
 import PlayCircleOutline from "@material-ui/icons/PlayCircleOutline";
+import movieContext from "../store/movieContext";
 
 const MovieOverview = (props) => {
   const [trailerState, setTrailerState] = useState(false);

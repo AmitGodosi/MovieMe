@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import MovieContext from "../store/movieContext";
-import GetMovie from "./GetMovie";
 import LatestMovie from "./LatestMovie/LatestMovie";
+import GetMovie from "./GetMovie";
 
 const POPULAR__MOVIES =
   "https://api.themoviedb.org/3/movie/popular?api_key=40b98d136e6b6d3ae87106bc05050eb1";
